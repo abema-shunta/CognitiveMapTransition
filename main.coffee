@@ -18,19 +18,20 @@ class CognitiveMapController
     @stations = []
     @relations = []
 
-  startTimer:
+  startTimer: ->
     @timer = setInterval(@draw, 1000)
 
-  draw: 
+  draw: ->
     for station in @stations
       station.draw()
+
     for relation in @relations 
       relation.draw()
 
-  stopTimer: 
+  stopTimer: -> 
     clearInterval(@timer)
 
-  addStation(station):
+  addStation: (station)->
     @stations.push(station)
 
 class Station 
